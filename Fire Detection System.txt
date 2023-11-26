@@ -1,0 +1,29 @@
+int fire=A0;
+int BUZZ=7;
+int value=0;
+int red=5;
+int white=6;
+void setup(){
+Serial.begin(9600);
+pinMode(fire,INPUT);
+pinMode(BUZZ,OUTPUT);
+pinMode(red,OUTPUT);
+pinMode(white,OUTPUT);
+}
+void loop()
+{
+value=analogRead(fire);
+Serial.println(value);
+delay(30);
+digitalWrite(red,HIGH);
+digitalWrite(white,LOW);
+if(value<50){
+digitalWrite(BUZZ,HIGH);
+digitalWrite(white,HIGH);
+digitalWrite(red,LOW);
+delay(2000);
+}
+digitalWrite(BUZZ,low);
+}
+
+
